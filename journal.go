@@ -10,7 +10,7 @@ import (
 type jlogger struct {
 }
 
-func NewJournalLogger() (logger, error) {
+func NewJournalLogger() (Logger, error) {
 	if !journal.Enabled() {
 		return nil, errors.New("could not connect to journald socket")
 	}

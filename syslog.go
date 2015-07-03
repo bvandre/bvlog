@@ -10,7 +10,7 @@ type syslogger struct {
 	*syslog.Writer
 }
 
-func NewSyslogLogger() (logger, error) {
+func NewSyslogLogger() (Logger, error) {
 	l, err := syslog.New(syslog.LOG_INFO, os.Args[0])
 	if err != nil {
 		return nil, err

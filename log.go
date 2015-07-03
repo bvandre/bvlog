@@ -4,14 +4,14 @@ import (
 	"io"
 )
 
-var l logger
+var l Logger
 
 //The logger interface will be implemented
 //by a few different types of loggers
 //
 //This should abstract away the individual
-//logging details
-type logger interface {
+//backend loggers
+type Logger interface {
 	io.Writer
 	io.Closer
 	Infof(format string, v ...interface{}) error
